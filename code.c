@@ -1,12 +1,11 @@
 #include <stdio.h>
 #include<ctype.h>
 #define SUBOR "sifra.txt"
-#define N 'Z' - 'A' + 1 
 
 int main()
 {
     int i=0, o=1, p=0, k, b=0, h=0, g=0;
-    int povodny[1000], uprava[1000] = {0};
+    int povodny[1000], uprava[1000];
     int c,i2,d;
     FILE *fr;
     char menu;
@@ -14,11 +13,11 @@ int main()
     do{
         scanf (" %c", &menu);
         
-        if (menu != 'k')
+        if (menu != 'k') //ak vstup z klávesnice je 'k' switch menu sa ukončí
         {
             switch(menu)
             {
-                case 'n':
+                case 'n': //načítanie správy zo súboru
                 
                 if((fr = fopen(SUBOR, "r")) == NULL) {
                 printf("Spravu sa nepodarilo nacitat\n");
@@ -39,7 +38,7 @@ int main()
                 }
                 break;
                 
-                case 'v':
+                case 'v': //výpis správy zo súboru
                 if(o==0)
                 {
                     while(o<i)
@@ -57,7 +56,7 @@ int main()
                 //printf("%d",o);
                 break;
                 
-                case 'u':
+                case 'u': //úprava načítanej správy
                 //printf("%d",o);
                 //printf("%d",i);
                 if(o==0)
@@ -86,7 +85,7 @@ int main()
                 }
                 break;
                 
-                case 's':
+                case 's': //výpis načítanej správy
                 if(p!=0)
                 {
                     while(o<i)
@@ -103,7 +102,7 @@ int main()
                 }
                 break;
                 
-                case 'd':
+                case 'd': //výpis všetkých slov danej dĺžky načítanej správy
                 scanf("%d",&k);
                 if(k<=100 && k>=1)
                 {
@@ -157,7 +156,7 @@ int main()
                 }
                 break;
                 
-                case 'h':
+                case 'h': //vytvorenie histogramu z upravenej správy
                 //c=0;
                 //if(p!=0)
                 //{
@@ -180,7 +179,7 @@ int main()
                 printf("c\n");
                 break;
 
-                case 'p':
+                case 'p': //výpis počtu všetkých znakov abecedy a ostatných
                 if(o==0)
                   {
                     while(o<i)
@@ -208,7 +207,7 @@ int main()
                 }
                 break;
 
-                case 'z':
+                case 'z': //zmazanie reťazca od daného miesta až po danú lokáciu
                 scanf("%d %d",&i2,&d);
                 if(p!=0)
                 {
@@ -242,7 +241,7 @@ int main()
                 break;
            }
         }
-     } while(menu!= 'k');
+     } while(menu!= 'k'); //ak vstup z klávesnice je 'k' cyklus do-while sa ukončí
 
     return 0;
 }
