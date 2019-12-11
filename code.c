@@ -1,12 +1,11 @@
 #include <stdio.h>
 #include<ctype.h>
 #define SUBOR "sifra.txt"
-#define N 'Z' - 'A' + 1 
 
 int main()
 {
     int i=0, o=1, p=0, k, b=0, h=0, g=0;
-    int povodny[1000], uprava[1000] = {0};
+    int povodny[1000], uprava[1000];
     int c,i2,d;
     FILE *fr;
     char menu;
